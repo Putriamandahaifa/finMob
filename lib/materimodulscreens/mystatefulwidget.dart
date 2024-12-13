@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
 
     // Now initialize the pages list with the username
     _pages = [
-      HomePage(username: username),  // Pass the username to HomePage
+      HomePege(username: username),  // Pass the username to HomePage
     CalendarPage(), // Halaman Cari
     Favorite(), // Halaman Pengaturan
     Userpage(), // Halaman Pengguna  // Pass the username to UserPage

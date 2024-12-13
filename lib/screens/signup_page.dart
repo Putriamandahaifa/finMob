@@ -4,6 +4,9 @@ import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/Loginpage.dart';
 
 TextEditingController getUser = TextEditingController();
+TextEditingController getNama = TextEditingController();
+TextEditingController getAlamat = TextEditingController();
+TextEditingController getTtl = TextEditingController();
 TextEditingController getPass = TextEditingController();
 
 class SignupPage extends StatelessWidget {
@@ -63,6 +66,7 @@ class SignupPage extends StatelessWidget {
             Padding(
               padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
+                controller: getNama,
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -77,6 +81,50 @@ class SignupPage extends StatelessWidget {
                   ),
                 
                   labelText: 'Name',
+                  labelStyle: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
+            Padding(
+              padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
+              child: TextFormField(
+                controller: getTtl,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  contentPadding:
+                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                
+                  labelText: 'Tempat, Tanggal Lahir',
+                  labelStyle: TextStyle(color: Colors.black),
+                ),
+              ),
+            ),
+            Padding(
+              padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
+              child: TextFormField(
+                controller: getAlamat,
+                cursorColor: Colors.black,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  contentPadding:
+                      EdgeInsets.only(left: 30.0, top: 20.0, bottom: 20.0),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                
+                  labelText: 'Alamat',
                   labelStyle: TextStyle(color: Colors.black),
                 ),
               ),
@@ -136,12 +184,15 @@ class SignupPage extends StatelessWidget {
               onPressed: () {
                 // Ambil username dari TextField
                 String username = getUser.text;
+                String fullname = getNama.text;
+                String address = getAlamat.text;
+                String birth = getTtl.text;
 
                 // Navigasi ke HomePage dan kirimkan username
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomePage(username: username),
+                    builder: (context) => HomePage(username: username, fullname:fullname, address:address, birth:birth),
                   ),
                 );
               },

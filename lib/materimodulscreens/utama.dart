@@ -18,8 +18,19 @@ import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
 class HomePage extends StatefulWidget {
   final String username;
+  final String fullname;
+  final String address;
+  final String birth;
 
-  const HomePage({Key? key, required this.username}) : super(key: key);
+  const HomePage({Key? key, required this.username, required this.fullname, required this.address, required this.birth}) : super(key: key);
+  
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+class HomePege extends StatefulWidget {
+  final String username;
+
+  const HomePege({Key? key, required this.username}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -32,7 +43,15 @@ class _HomePageState extends State<HomePage> {
   TextEditingController getUser =
       TextEditingController(); // Controller for username
   late String username; // Declare a variable to store the username
-
+  TextEditingController getName =
+      TextEditingController(); // Controller for username
+  late String fullname; // Declare a variable to store the username
+  TextEditingController getAlamat =
+      TextEditingController(); // Controller for username
+  late String address; // Declare a variable to store the username
+  TextEditingController getTtl =
+      TextEditingController(); // Controller for username
+  late String birth; // Declare a variable to store the username
   // Initialize the list of pages
   List<Widget> _pages = [];
 
@@ -44,7 +63,7 @@ class _HomePageState extends State<HomePage> {
       buildutama(),
       CalendarPage(), // Halaman utama
       Favorite(),
-      builduser(widget.username, context), // Kirim username ke UserPage
+      builduser(widget.username,context, widget.address, widget.birth, widget.fullname), // Kirim username ke UserPage
     ];
   }
 
@@ -400,7 +419,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget builduser(String username, BuildContext context) {
+Widget builduser(String username, BuildContext context, String address, String birth, String fullname) {
   return Scaffold(
     appBar: AppBar(
       backgroundColor: Colors.white,
@@ -451,13 +470,16 @@ Widget builduser(String username, BuildContext context) {
           height: 20.0,
         ),
         // Bagian Tombol Menu
+        
         Expanded(
           child: ListView(
             children: [
               _buildMenuOption(Icons.person, "Profile", () {
+                
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Profile()),
+                  
+                  MaterialPageRoute(builder: (context) => Profile(username: username, fullname:fullname, address:address, birth:birth)),
                 );
               }),
               _buildMenuOption(Icons.logout, "Log Out", () {

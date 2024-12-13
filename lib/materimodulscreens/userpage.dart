@@ -67,10 +67,7 @@ class _UserpageState extends State<Userpage> {
             child: ListView(
               children: [
                 _buildMenuOption(Icons.person, "Profile", () {
-                    Navigator.push(
-                    context, 
-                    MaterialPageRoute(builder: (context) => Profile())
-                  );
+                    
                 }),
                 _buildMenuOption(Icons.bookmark, "Bookmarked", () {
                   // Aksi ketika tombol Bookmarked ditekan

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/models/content.dart';
 import 'package:wisata_mobile_5/models/destination_model.dart';
+import 'package:wisata_mobile_5/screens/signup_page.dart';
 import 'package:wisata_mobile_5/widget/rekomendasi_destination.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  final String username;
+  final String fullname;
+  final String address;
+  final String birth;
+
+  const Profile({Key? key, required this.username, required this.fullname, required this.address, required this.birth}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +41,7 @@ class Profile extends StatelessWidget {
             SizedBox(height: 8),
             // User Name
             Text(
-              'Leonardo',
+              username,
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -45,23 +51,23 @@ class Profile extends StatelessWidget {
 
             // Profile Fields
             ProfileField(
-              label: 'First Name',
-              value: 'Leonardo',
+              label: 'User Name',
+              value: username,
             ),
             SizedBox(height: 16),
             ProfileField(
-              label: 'Last Name',
-              value: 'Ahmed',
+              label: 'Full Name',
+              value: fullname,
             ),
             SizedBox(height: 16),
             ProfileField(
-              label: 'Location',
-              value: 'Sylhet Bangladesh',
+              label: 'Birth Day',
+              value: birth,
             ),
             SizedBox(height: 16),
             ProfileField(
-              label: 'Mobile Number',
-              value: '+88 01758-000666',
+              label: 'Address',
+              value: address,
             ),
           ],
         ),

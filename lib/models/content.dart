@@ -151,7 +151,7 @@ class _DetailState extends State<Detail> {
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage(username: 'Kevin')),
+                MaterialPageRoute(builder: (context) => HomePege(username: 'Kevin')),
               );
             },
             child: CircleAvatar(
