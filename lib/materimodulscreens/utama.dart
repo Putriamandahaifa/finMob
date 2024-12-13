@@ -7,6 +7,7 @@ import 'package:wisata_mobile_5/materimodulscreens/page/most.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/near.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/popular.dart';
 import 'package:wisata_mobile_5/materimodulscreens/page/thenice.dart';
+import 'package:wisata_mobile_5/materimodulscreens/profile.dart';
 import 'package:wisata_mobile_5/materimodulscreens/searchpage.dart';
 import 'package:wisata_mobile_5/materimodulscreens/Favorite.dart';
 import 'package:wisata_mobile_5/materimodulscreens/userpage.dart';
@@ -454,7 +455,10 @@ Widget builduser(String username, BuildContext context) {
           child: ListView(
             children: [
               _buildMenuOption(Icons.person, "Profile", () {
-                // Aksi ketika tombol Profile ditekan
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
               }),
               _buildMenuOption(Icons.logout, "Log Out", () {
                 Navigator.push(

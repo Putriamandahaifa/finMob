@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wisata_mobile_5/materimodulscreens/Favorite.dart';
 import 'package:wisata_mobile_5/materimodulscreens/mystatefulwidget.dart';
+import 'package:wisata_mobile_5/materimodulscreens/profile.dart';
 import 'package:wisata_mobile_5/materimodulscreens/utama.dart';
 import 'package:wisata_mobile_5/screens/splashscreen.dart';
 
@@ -66,7 +67,10 @@ class _UserpageState extends State<Userpage> {
             child: ListView(
               children: [
                 _buildMenuOption(Icons.person, "Profile", () {
-                  // Aksi ketika tombol Profile ditekan
+                    Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (context) => Profile())
+                  );
                 }),
                 _buildMenuOption(Icons.bookmark, "Bookmarked", () {
                   // Aksi ketika tombol Bookmarked ditekan

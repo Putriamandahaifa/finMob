@@ -84,6 +84,7 @@ class SignupPage extends StatelessWidget {
             Padding(
               padding:const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
+                obscureText: true,
                 controller: getPass,
                 cursorColor: Colors.black,
                 
@@ -109,7 +110,7 @@ class SignupPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
                 cursorColor: Colors.black,
-                
+                obscureText: true,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey, width: 2.0),

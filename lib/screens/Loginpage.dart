@@ -103,6 +103,7 @@ class _LoginFormState extends State<LoginForm> {
               padding:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
               child: TextFormField(
+                obscureText: true,
                 controller: getPass,
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
